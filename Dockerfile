@@ -1,4 +1,4 @@
-FROM alpine:3.22 AS build
+FROM alpine:3.23 AS build
 ARG VERSION=1.25.2
 
 # Inspiration from https://github.com/gmr/alpine-pgbouncer/blob/master/Dockerfile
@@ -22,7 +22,7 @@ COPY entrypoint.sh /entrypoint.sh
 COPY --from=build /pgbouncer/pgbouncer /usr/bin
 COPY --from=build /pgbouncer/etc/pgbouncer.ini /etc/pgbouncer/pgbouncer.ini.example
 COPY --from=build /pgbouncer/etc/userlist.txt /etc/pgbouncer/userlist.txt.example
-EXPOSE 5432
+EXPOSE 6432
 USER postgres
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["/usr/bin/pgbouncer", "/etc/pgbouncer/pgbouncer.ini"]
