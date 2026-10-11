@@ -43,5 +43,5 @@ jobs:
           tags: |
             ${{ secrets.DOCKER_USERNAME }}/pgbouncer:1.25.2
             ${{ secrets.DOCKER_USERNAME }}/pgbouncer:${{ github.ref_name }}
-            ${{ secrets.ALIYUN_REGISTRY }}/chaojiezuo/chaojiezuo:pgbouncer:1.25.2
-            ${{ secrets.ALIYUN_REGISTRY }}/chaojiezuo/chaojiezuo:pgbouncer-${{ github.sha }}
+            ${{ secrets.ALIYUN_REGISTRY }}/chaojiezuo/pgbouncer:1.25.2
+            ${{ secrets.ALIYUN_REGISTRY }}/chaojiezuo/pgbouncer:latest
